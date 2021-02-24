@@ -57,7 +57,7 @@ ROOT_URLCONF = 'config.urls'
 
 # authenticate
 LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = 'rest_framework:login'
+LOGOUT_REDIRECT_URL = '/'
 
 
 TEMPLATES = [
@@ -125,8 +125,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Django REST Framework
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': {
-        # authenticate cookie
-        'rest_framework.authenticationSessionAuthentication',
-    }
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        # cookie
+        'rest_framework.authentication.SessionAuthentication',
+    )
 }

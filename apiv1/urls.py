@@ -6,9 +6,9 @@ from rest_framework import routers
 
 # router
 router = routers.DefaultRouter()
-router.register('book', views.BookViewSet)
+router.register('books', views.BookViewSet)
 
-
+app_name = 'apiv1'
 urlpatterns = [
-    path('books/', include(router.urls)),
+    path('', include(router.urls)),
 ]
